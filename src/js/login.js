@@ -18,7 +18,7 @@ document.getElementById('loginForm').addEventListener('submit', async (e) => {
   if (json.token) {
     localStorage.setItem('token', json.token);
     alert(`Benvingut, ${username}`);
-    window.location.href = "/src/dashboard.html";
+    window.location.href = "/src/config.html";
   } else {
     alert("Credencials incorrectes.");
   }

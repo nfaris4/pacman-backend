@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8" />
+  <title>Configuració del Joc</title>
+  <link rel="stylesheet" href="/src/css/styles.css" />
+</head>
+<body>
+  <h2>Configuració del Joc</h2>
+
+  <form id="configForm">
+    <label for="tema">Tema:</label>
+    <select id="tema" required>
+      <option value="classic">Clàssic</option>
+      <option value="dark">Fosc</option>
+      <option value="neon">Neó</option>
+    </select>
+
+    <label for="musica">Música:</label>
+    <select id="musica" required>
+      <option value="on">Activada</option>
+      <option value="off">Desactivada</option>
+    </select>
+
+    <label for="dificultat">Dificultat:</label>
+    <select id="dificultat" required>
+      <option value="fàcil">Fàcil</option>
+      <option value="mitjà">Mitjà</option>
+      <option value="difícil">Difícil</option>
+    </select>
+
+    <button type="submit">Desar configuració</button>
+  </form>
+
+  <script type="module" src="/src/js/config.js"></script>
+</body>
+</html>
