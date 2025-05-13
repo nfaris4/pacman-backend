@@ -1,4 +1,5 @@
-export default class User {
+/* import { enviarPartida } from './utils/enviarPartida.js';
+ */export default class User {
     #name;
     #surname;
     #email;
@@ -57,5 +58,20 @@ export default class User {
     toggleMusic(on) {
       this.#settings.music = on;
     }
+
+finalDePartida(punts, guanyat) {
+  const durada = 60; // o calcula-ho si tens un cronòmetre
+
+  console.log(`[🟡] Partida finalitzada | punts: ${punts}, guanyat: ${guanyat}`);
+
+  enviarPartida(punts, durada, guanyat);
+
+  // Mostra un missatge i torna al panell
+  setTimeout(() => {
+    alert(guanyat ? "Has guanyat! 🎉" : "Has perdut 😢");
+    window.location.href = "/src/dashboard.html";
+  }, 1000);
+}
+
   }
   

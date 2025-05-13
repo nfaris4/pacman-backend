@@ -88,10 +88,14 @@ export default class GamePacman {
 
     // Menjar
     this.#foods = this.#foods.filter((food) => !food.isEaten(this.#pacman));
-    this.pointsCollected = levels[this.levelIndex].pointsToWin - this.#foods.length;
+    this.pointsCollected =
+      levels[this.levelIndex].pointsToWin - this.#foods.length;
 
     if (this.#foods.length === 0) {
       this.#win = true;
+      if (typeof window.victory === "function") {
+        window.victory(this.pointsCollected); 
+      }
     }
 
     // Reduir el temps cada segon
@@ -101,8 +105,14 @@ export default class GamePacman {
 
     if (this.timeLeft === 0) {
       this.#lives--;
-      if (this.#lives <= 0) this.#gameOver = true;
-      else this.nextLevel();
+      if (this.#lives <= 0) {
+        this.#gameOver = true;
+        if (typeof window.gameOver === "function") {
+          window.gameOver(this.pointsCollected); 
+        }
+      } else {
+        this.nextLevel();
+      }
     }
   }
 
@@ -110,7 +120,7 @@ export default class GamePacman {
     this.#walls.forEach((wall) => wall.draw());
     this.#foods.forEach((food) => food.draw());
     if (this.#pacman) this.#pacman.draw();
-    
+
     // Missatges de fi de joc
     if (this.#gameOver || this.#win) {
       this.#p.fill(255, 0, 0);

@@ -31,4 +31,13 @@ const sketch = (p) => {
   };
 };
 
+function gameOver(punts = 0) {
+  window.currentUser.finalDePartida(punts, false);
+}
+
+function victory(punts = 0) {
+  window.currentUser.finalDePartida(punts, true);
+}
+
+
 export default sketch;
