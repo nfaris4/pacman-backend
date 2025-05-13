@@ -1,16 +1,16 @@
 import sketch from '../game/sketch.js';
 import User from '../game/classes/User.js';
 
-document.addEventListener('DOMContentLoaded', () => {
-  const userData = JSON.parse(localStorage.getItem('loggedUser'));
-  if (!userData) {
-    alert('Has d’iniciar sessió per jugar.');
-    window.location.href = '/src/login.html';
+document.addEventListener("DOMContentLoaded", () => {
+  const token = localStorage.getItem("token");
+  if (!token) {
+    alert("No estàs loguejat!");
+    window.location.href = "/src/login.html";
     return;
   }
 
   // Crea una instància de User amb les dades de localStorage
-  const user = new User(userData);
+  const user = new User(token);
   window.currentUser = user; // opcional: exposar globalment si cal
 
   // Llança p5
