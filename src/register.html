@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8" />
+  <title>Registre</title>
+  <link rel="stylesheet" href="/src/css/styles.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+
+</head>
+<body>
+  <h2>Registra un nou usuari</h2>
+  <form id="registerForm">
+    <input type="text" id="name" placeholder="Nom" required />
+    <input type="text" id="surname" placeholder="Cognoms" required />
+    <input type="email" id="email" placeholder="Email" required />
+    <input type="date" id="birthdate" required />
+    <input type="password" id="password" placeholder="Contrasenya" required />
+    <button type="submit">Registrar</button>
+  </form>
+
+  <script type="module" src="/src/js/register.js"></script>
+</body>
+</html>

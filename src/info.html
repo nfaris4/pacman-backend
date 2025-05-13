@@ -1,0 +1,10 @@
+<h2>Informació tècnica</h2>
+<ul>
+  <li>Browser: <span id="browser"></span></li>
+  <li>Versió: <span id="version"></span></li>
+</ul>
+
+<script>
+  document.getElementById('browser').textContent = window.navigator.userAgent;
+  document.getElementById('version').textContent = window.navigator.appVersion;
+</script>

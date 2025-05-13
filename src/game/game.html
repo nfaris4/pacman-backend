@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8" />
+  <title>Pacman - Joc</title>
+  <link rel="stylesheet" href="/src/css/styles.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+</head>
+<body>
+  <h1>Pacman</h1>
+  <div id="hud">
+    <div id="livesDisplay">
+      <span>Vides:</span>
+      <span id="livesText">3</span>
+    </div>
+    <div id="timeDisplay">
+      <span>Temps:</span>
+      <span id="timeText">60s</span>
+    </div>
+    <div id="pointsDisplay">
+      <span>Punts:</span>
+      <span id="pointsText">0</span>
+    </div>
+  </div>
+  <div id="game-container"></div>
+  <div id="game-message" class="hidden"></div>
+  <a class="btn btn-secondary" href="/src/dashboard.html" style="margin-top: 20px;">Tornar al panell</a>
+  <script type="module" src="/src/js/game.js"></script>
+</body>
+</html>

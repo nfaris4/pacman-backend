@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Panell d'Usuari</title>
+    <link rel="stylesheet" href="/src/css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <div id="dashboard-container">
+      <h1>Benvingut al panell!</h1>
+      <p id="user-info"></p>
+      <div id="dashboard-buttons">
+        <a class="btn btn-primary" href="/src/game/game.html">🎮 Inicia el joc</a>
+        <a class="btn btn-secondary" href="/src/index.html">🏠 Tornar al menú principal</a>
+      </div>
+
+      <div id="tables-container">
+        <div id="statistics-section">
+          <h2>Estadístiques</h2>
+          <table>
+            <tr>
+              <td>Partides totals:</td>
+              <td id="games-total"></td>
+            </tr>
+            <tr>
+              <td>Partides guanyades:</td>
+              <td id="games-won"></td>
+            </tr>
+            <tr>
+              <td>Partides perdudes:</td>
+              <td id="games-lost"></td>
+            </tr>
+            <tr>
+              <td>Punts totals:</td>
+              <td id="points-total"></td>
+            </tr>
+          </table>
+        </div>
+
+        <div id="ranking-section">
+          <h2>Top jugadors</h2>
+          <label>
+            Mostrar:
+            <select id="top-count">
+              <option value="3">Top 3</option>
+              <option value="5">Top 5</option>
+              <option value="10">Top 10</option>
+            </select>
+
+            <table id="ranking-table"></table>
+
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="/src/js/dashboard.js"></script>
+  </body>
+</html>

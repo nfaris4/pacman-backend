@@ -1,0 +1,250 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+h1, h2 {
+  text-align: center;
+  color: #c7c7d6;
+}
+
+form {
+  max-width: 400px;
+  margin: auto;
+  background: #2c3e50;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  color: #fff;
+}
+
+input, button {
+  display: block;
+  width: 100%;
+  margin: 0.5rem 0;
+  padding: 0.8rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+}
+
+input {
+  background-color: #34495e;
+  color: #fff;
+}
+
+button {
+  background-color: #e74c3c;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #c0392b;
+}
+
+input, select, button {
+  display: block;
+  width: 100%;
+  margin: 0.5rem 0;
+  padding: 0.6rem;
+  font-size: 1rem;
+}
+
+button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+
+#tables-container {
+  display: flex;
+  justify-content: space-around; 
+  align-items: center; 
+  gap: 40px; 
+  margin-top: 20px;
+}
+
+
+table {
+  margin: 0 auto;
+  border-collapse: collapse;
+  width: 100%; 
+  max-width: 400px; 
+  background: #2c3e50; 
+  border-radius: 8px;
+  overflow: hidden;
+  color: #ecf0f1; 
+}
+
+th, td {
+  padding: 0.8rem;
+  border: 1px solid #34495e; 
+  text-align: center;
+}
+
+th {
+  background-color: #34495e; 
+  font-weight: bold;
+}
+
+tr:nth-child(even) {
+  background-color: #3b4a5a; 
+}
+
+tr:hover {
+  background-color: #4b5a6a; 
+}
+
+#statistics-section,
+#ranking-section {
+  flex: 1;
+  max-width: 400px; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; 
+}
+
+#ranking-section label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+#ranking-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; 
+  margin-top: 0;
+}
+
+#ranking-table {
+  margin-top: 1rem;
+}
+
+nav ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 0;
+}
+
+nav li {
+  display: inline;
+}
+
+nav a {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  color: #fff;
+  background-color: #3498db;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  animation: bounce 2s infinite;
+}
+
+nav a:hover {
+  background-color: #2980b9;
+}
+
+#hud {
+  display: flex;
+  justify-content: space-around; 
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #222;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  gap: 20px; 
+}
+
+#hud div {
+  display: flex;
+  align-items: center;
+  gap: 5px; 
+}
+
+#hud div img {
+  width: 24px;
+  height: 24px;
+}
+
+#hud div span {
+  font-weight: bold;
+  white-space: nowrap; 
+}
+
+#livesText,
+#timeText,
+#pointsText {
+  font-weight: normal;
+  color: #fff;
+}
+
+#game-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+  border: 5px solid #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  width: 80vw; /* Redueix la mida del contenidor */
+  height: 80vw; /* Redueix la mida del contenidor */
+  max-width: 500px; /* Amplada màxima */
+  max-height: 500px; /* Alçada màxima */
+  margin: 20px auto; /* Centra el contenidor */
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+#game-message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 48px;
+  font-weight: bold;
+  color: red;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  display: none;
+}
+
+#game-message.hidden {
+  display: none;
+}
+
