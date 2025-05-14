@@ -8,7 +8,7 @@ export function enviarPartida(punts, durada, guanyat) {
     guanyat
   };
 
-  return fetch("http://localhost:8080/v1/add_game", {
+  return fetch(`${import.meta.env.VITE_API_URL}/v1/add_game`, {
     method: "POST",
     headers: {
       Authorization: `Bearer ${getToken()}`,

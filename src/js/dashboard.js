@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Obtenir estadístiques reals
-  fetch("http://localhost:8080/v1/get_user_stats", {
+  fetch(`${import.meta.env.VITE_API_URL}/v1/get_user_stats`, {
     method: "GET",
     headers: authHeaders(),
   })
@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const table = document.getElementById("ranking-table");
 
   // Obtenir rànquing real
-  fetch("http://localhost:8080/v1/get_top_users")
+  fetch(`${import.meta.env.VITE_API_URL}/v1/get_top_users`)
     .then((res) => res.json())
     .then((data) => {
       if (data.status === "ok") {

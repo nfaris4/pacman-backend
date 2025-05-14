@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
       dificultat: document.getElementById('dificultat').value
     };
 
-    fetch('http://localhost:8080/v1/config_game', {
+    fetch(`${import.meta.env.VITE_API_URL}/v1/config_game`, {
       method: 'POST',
       headers: authHeaders(),
       body: JSON.stringify(config)
