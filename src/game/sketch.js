@@ -31,6 +31,10 @@ const sketch = (p) => {
   };
 };
 
+window.victory = victory;
+window.gameOver = gameOver;
+
+
 function gameOver(punts = 0) {
   window.currentUser.finalDePartida(punts, false);
 }
