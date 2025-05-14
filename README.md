@@ -35,7 +35,7 @@ cp .env.example .env
 # Editem la config .env:
 # database.default.database = pacman
 # database.default.username = root
-# JWT_SECRET="ClauSuperSecreta123"
+# JWT_SECRET=""
 php spark migrate
 php spark serve
 
