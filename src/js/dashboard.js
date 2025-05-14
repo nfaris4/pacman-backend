@@ -8,6 +8,12 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
+  document.getElementById("logoutBtn").addEventListener("click", () => {
+    localStorage.removeItem("token");
+    alert("Sessió tancada!");
+    window.location.href = "/src/login.html";
+  });
+
   // Obtenir estadístiques reals
   fetch("http://localhost:8080/v1/get_user_stats", {
     method: "GET",
