@@ -14,6 +14,7 @@ export default class GamePacman {
   #lives;
   #gameOver = false;
   #win = false;
+  #partidaFinalitzada = false;
 
   constructor(p, config, wallImg, pacmanImgs) {
     this.#p = p;
@@ -91,24 +92,25 @@ export default class GamePacman {
     this.pointsCollected =
       levels[this.levelIndex].pointsToWin - this.#foods.length;
 
-    if (this.#foods.length === 0) {
+    if (this.#foods.length === 0 && !this.#partidaFinalitzada) {
       this.#win = true;
+      this.#partidaFinalitzada = true;
       if (typeof window.victory === "function") {
-        window.victory(this.pointsCollected); 
+        window.victory(this.pointsCollected);
       }
     }
-
     // Reduir el temps cada segon
     if (this.#p.frameCount % 60 === 0 && this.timeLeft > 0) {
       this.timeLeft--;
     }
 
-    if (this.timeLeft === 0) {
+    if (this.timeLeft === 0 && !this.#partidaFinalitzada) {
       this.#lives--;
       if (this.#lives <= 0) {
         this.#gameOver = true;
+        this.#partidaFinalitzada = true;
         if (typeof window.gameOver === "function") {
-          window.gameOver(this.pointsCollected); 
+          window.gameOver(this.pointsCollected);
         }
       } else {
         this.nextLevel();
